@@ -5,7 +5,6 @@ using System.Windows;
 using System.Windows.Documents;
 using System.Windows.Markup;
 using System.Windows.Media;
-using X_Wing_Visual_Builder.Model;
 
 [ContentProperty("Text")]
 public class OutlinedTextBlock : FrameworkElement

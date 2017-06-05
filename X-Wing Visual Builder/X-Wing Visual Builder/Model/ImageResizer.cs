@@ -1,8 +1,6 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.IO;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace X_Wing_Visual_Builder.Model

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualBasic.FileIO;
-using System.Resources;
 using System.IO;
 
 namespace X_Wing_Visual_Builder.Model

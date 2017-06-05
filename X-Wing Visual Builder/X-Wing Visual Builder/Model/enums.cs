@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace X_Wing_Visual_Builder.Model
+﻿namespace X_Wing_Visual_Builder.Model
 {
     public enum Maneuver { LSloop = 1, RSloop = 2, KTurn = 3, LTurn = 4, RTurn = 5, Stop = 6, LBank = 7, RBank = 8, Streight = 9, LTalon = 10, RTalon = 11, LBack = 12, RBack = 13, Back = 14 }
     public enum ManeuverDificulty { White = 1, Green = 2, Red = 3}
