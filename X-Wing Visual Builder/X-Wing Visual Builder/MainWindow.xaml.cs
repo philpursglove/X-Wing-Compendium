@@ -27,17 +27,17 @@ namespace X_Wing_Visual_Builder
             InitializeComponent();
             ResizeMode = ResizeMode.CanResize;
             WindowState = WindowState.Maximized;
-            ComponentDispatcher.ThreadIdle += new System.EventHandler(ComponentDispatcher_ThreadIdle);
+            ComponentDispatcher.ThreadIdle += FillCardCache;
         }
 
-        void ComponentDispatcher_ThreadIdle(object sender, EventArgs e)
+        void FillCardCache(object sender, EventArgs e)
         {
-            if (isUpgradeCacheFull == false)
+            if (!isUpgradeCacheFull)
             {
                 foreach (Upgrade upgrade in Upgrades.upgrades.Values.ToList())
                 {
                     isUpgradeCacheFull = true;
-                    if (browseCardsPage.upgradeCache.ContainsKey(upgrade.id) == false)
+                    if (!browseCardsPage.upgradeCache.ContainsKey(upgrade.id))
                     {
                         browseCardsPage.AddUpgradeToCache(upgrade);
                         isUpgradeCacheFull = false;
@@ -45,12 +45,12 @@ namespace X_Wing_Visual_Builder
                     }
                 }
             }
-            if (isPilotCacheFull == false)
+            if (!isPilotCacheFull)
             {
                 foreach (Pilot pilot in Pilots.pilots.Values.ToList())
                 {
                     isPilotCacheFull = true;
-                    if (browseCardsPage.pilotCache.ContainsKey(pilot.id) == false)
+                    if (!browseCardsPage.pilotCache.ContainsKey(pilot.id))
                     {
                         browseCardsPage.AddPilotToCache(pilot);
                         isPilotCacheFull = false;
