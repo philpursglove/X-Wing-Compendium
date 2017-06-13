@@ -3,7 +3,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using X_Wing_Visual_Builder.Model;
 using X_Wing_Visual_Builder.View;
 
@@ -12,11 +11,11 @@ namespace X_Wing_Visual_Builder
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : NavigationWindow
+    public partial class MainWindow
     {
         BrowseCardsPage browseCardsPage = (BrowseCardsPage)Pages.pages[PageName.BrowseCards];
-        bool isUpgradeCacheFull = false;
-        bool isPilotCacheFull = false;
+        bool isUpgradeCacheFull;
+        bool isPilotCacheFull;
 
         public MainWindow()
         {
