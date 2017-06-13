@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
@@ -113,7 +114,7 @@ namespace X_Wing_Visual_Builder.View
 
         private void GetNewCard()
         {
-            int randomNumber = Rng.Next(3);
+            int randomNumber = new Random().Next(3);
             if (randomNumber == 0)
             {
                 if(!isInclusingPilots && (isInclusingUpgrades || isInclusingManeuvers)) { GetNewCard();return; }

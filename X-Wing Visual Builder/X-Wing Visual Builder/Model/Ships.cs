@@ -66,10 +66,10 @@ namespace X_Wing_Visual_Builder.Model
         public static Ship GetRandomShip()
         {
             Array values = Enum.GetValues(typeof(ShipType));
-            ShipType randomShipType = (ShipType)values.GetValue(Rng.Next(values.Length));
+            ShipType randomShipType = (ShipType)values.GetValue(new Random().Next(values.Length));
             while(ships.ContainsKey(randomShipType) == false)
             {
-                randomShipType = (ShipType)values.GetValue(Rng.Next(values.Length));
+                randomShipType = (ShipType)values.GetValue(new Random().Next(values.Length));
             }
             return ships[randomShipType].First().Value;
         }

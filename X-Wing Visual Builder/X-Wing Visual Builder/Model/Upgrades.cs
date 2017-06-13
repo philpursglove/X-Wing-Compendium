@@ -186,12 +186,12 @@ namespace X_Wing_Visual_Builder.Model
         public static Upgrade GetRandomUpgrade()
         {
             List<int> keyList = new List<int>(upgrades.Keys);
-            Upgrade randomUpgrade = upgrades[keyList[Rng.Next(keyList.Count)]];
+            Upgrade randomUpgrade = upgrades[keyList[new Random().Next(keyList.Count)]];
             while(true)
             {
                 if(randomUpgrade.shipSize == ShipSize.Huge || randomUpgrade.upgradeType == UpgradeType.Hardpoint || randomUpgrade.upgradeType == UpgradeType.Team)
                 {
-                    randomUpgrade = upgrades[keyList[Rng.Next(keyList.Count)]];
+                    randomUpgrade = upgrades[keyList[new Random().Next(keyList.Count)]];
                 }
                 else
                 {
