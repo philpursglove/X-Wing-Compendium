@@ -19,14 +19,19 @@ namespace X_Wing_Visual_Builder
 
         public MainWindow()
         {
-            string baseLocation = System.Reflection.Assembly.GetExecutingAssembly().CodeBase;
-            string filteredLocation = System.IO.Path.GetDirectoryName(baseLocation).Replace("file:\\", "") + "\\Misc\\";
-            Uri iconUri = new Uri(filteredLocation + "RebelIcon.ico");
-            Icon = BitmapFrame.Create(iconUri);
+            SetIcon();
             InitializeComponent();
             ResizeMode = ResizeMode.CanResize;
             WindowState = WindowState.Maximized;
             ComponentDispatcher.ThreadIdle += FillCardCache;
+        }
+
+        private void SetIcon()
+        {
+            string baseLocation = System.Reflection.Assembly.GetExecutingAssembly().CodeBase;
+            string filteredLocation = System.IO.Path.GetDirectoryName(baseLocation).Replace("file:\\", "") + "\\Misc\\";
+            Uri iconUri = new Uri(filteredLocation + "RebelIcon.ico");
+            Icon = BitmapFrame.Create(iconUri);
         }
 
         void FillCardCache(object sender, EventArgs e)
